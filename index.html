@@ -23,8 +23,8 @@
     <meta property="og:image" content="https://kstev239.github.io/earshot-site/assets/og.png" />
     <meta property="og:locale" content="de_DE" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="assets/style.css" />
-    <script src="assets/site.js" defer></script>
+    <link rel="stylesheet" href="assets/style.css?v=3" />
+    <script src="assets/site.js?v=3" defer></script>
   </head>
   <body>
     <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -32,7 +32,7 @@
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="./" aria-label="Earshot – Startseite">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
             <rect width="64" height="64" rx="14" fill="#2a2b33" />
             <path
               d="M44 20C39 13 29 11 22 16C15 21 14 32 19 39C22 43.5 26 46 31 47.5"
@@ -77,7 +77,7 @@
                 data-label-mac="Kostenlos für Mac laden"
                 data-label-windows="Kostenlos für Windows laden"
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"
                     fill="none"
@@ -129,7 +129,7 @@
                 <span>Kampagnenstart am 3. März. Fürs Budget fehlen rund 12.000 €.</span>
                 <span class="ask">Frage an dich: Reicht dein Budget bis Ende Q1?</span>
               </div>
-              <svg class="cursor" viewBox="0 0 18 24" aria-hidden="true">
+              <svg class="cursor" width="15" height="20" viewBox="0 0 18 24" aria-hidden="true">
                 <path
                   d="M1 1v19l5-4.5 3.4 7.4 3.2-1.5-3.3-7.2H16z"
                   fill="#ffffff"
@@ -169,7 +169,7 @@
               </div>
               <div class="scene" aria-hidden="true">
                 <div class="menubar">
-                  <svg viewBox="0 0 16 16">
+                  <svg width="16" height="16" viewBox="0 0 16 16">
                     <path
                       d="M11 5C9.75 3.25 7.25 2.75 5.5 4C3.75 5.25 3.5 8 4.75 9.75C5.5 10.9 6.5 11.5 7.75 11.9"
                       fill="none"
@@ -280,60 +280,60 @@
                 <tr>
                   <th scope="col"><span class="sr-only">Funktion</span></th>
                   <th scope="col" class="us">Earshot</th>
-                  <th scope="col">Untertitel in Zoom, Teams, Meet</th>
-                  <th scope="col">Live-Untertitel von macOS / Windows</th>
+                  <th scope="col">Zoom, Teams, Meet</th>
+                  <th scope="col">Live-Untertitel des Systems</th>
                   <th scope="col">Cloud-Notizbots</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Untertitel auf dem Bildschirm, an dem du arbeitest</th>
-                  <td class="us yes">Ja</td>
-                  <td class="no">Nein</td>
-                  <td class="part">fester Platz</td>
-                  <td class="no">Nein</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
+                  <td><span class="part">fester Platz</span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
                 </tr>
                 <tr>
                   <th scope="row">Hinweis, wenn dein Name fällt</th>
-                  <td class="us yes">Ja</td>
-                  <td class="no">Nein</td>
-                  <td class="no">Nein</td>
-                  <td class="no">Nein</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
                 </tr>
                 <tr>
                   <th scope="row">„Worum ging’s?“ mitten im Meeting</th>
-                  <td class="us yes">Ja</td>
-                  <td class="part">mit KI-Zusatzabo</td>
-                  <td class="no">Nein</td>
-                  <td class="part">teilweise</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="part">mit KI-Zusatzabo</span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
+                  <td><span class="part">teilweise</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Zusammenfassung und Aufgaben</th>
-                  <td class="us yes">Ja</td>
-                  <td class="part">mit KI-Zusatzabo</td>
-                  <td class="no">Nein</td>
-                  <td class="yes">Ja</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="part">mit KI-Zusatzabo</span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
+                  <td><span class="mark yes" role="img" aria-label="Ja"></span></td>
                 </tr>
                 <tr>
                   <th scope="row">Funktioniert mit jedem Meeting-Programm</th>
-                  <td class="us yes">Ja</td>
-                  <td class="no">nur im eigenen</td>
-                  <td class="yes">Ja</td>
-                  <td class="part">nur unterstützte</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="part">nur im eigenen</span></td>
+                  <td><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="part">nur unterstützte</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Kein Bot im Meeting</th>
-                  <td class="us yes">Ja</td>
-                  <td class="yes">Ja</td>
-                  <td class="yes">Ja</td>
-                  <td class="no">Nein</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
                 </tr>
                 <tr>
                   <th scope="row">Gespräch bleibt auf deinem Rechner</th>
-                  <td class="us yes">Ja</td>
-                  <td class="no">Nein</td>
-                  <td class="yes">Ja</td>
-                  <td class="no">Nein</td>
+                  <td class="us"><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
+                  <td><span class="mark yes" role="img" aria-label="Ja"></span></td>
+                  <td><span class="mark no" role="img" aria-label="Nein"></span></td>
                 </tr>
               </tbody>
             </table>
