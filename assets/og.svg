@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0" r="0.8">
+      <stop offset="0" stop-color="#f2a63c" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#f2a63c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#131418"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(80 72) scale(1.5)">
+    <rect width="64" height="64" rx="14" fill="#2a2b33"/>
+    <path d="M44 20C39 13 29 11 22 16C15 21 14 32 19 39C22 43.5 26 46 31 47.5" fill="none" stroke="#f4f4f1" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="34" cy="29" r="5.2" fill="#f2a63c"/>
+  </g>
+  <text x="196" y="132" font-family="-apple-system, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="44" font-weight="700" fill="#f1f1f3">Earshot</text>
+  <text x="80" y="268" font-family="-apple-system, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="64" font-weight="700" fill="#f1f1f3" letter-spacing="-1.5">Nie wieder:</text>
+  <text x="80" y="346" font-family="-apple-system, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="64" font-weight="700" fill="#f2a63c" letter-spacing="-1.5">„Kannst du die Frage wiederholen?“</text>
+  <rect x="80" y="420" width="760" height="112" rx="18" fill="#0d0e12" stroke="#ffffff1a"/>
+  <rect x="80" y="420" width="6" height="112" rx="3" fill="#f2a63c"/>
+  <text x="112" y="466" font-family="-apple-system, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="26" fill="#b9bac4">Fürs Budget fehlen uns noch rund zwölftausend Euro.</text>
+  <rect x="108" y="485" width="66" height="36" rx="6" fill="#f2a63c"/>
+  <text x="116" y="512" font-family="-apple-system, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="26" font-weight="600" fill="#1b1407">Mira</text>
+  <text x="176" y="512" font-family="-apple-system, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="26" fill="#f1f1f3">, reicht dein Topf dafür bis Ende Q1?</text>
+  <text x="80" y="588" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="22" fill="#a3a5b0">Live-Untertitel · Rückblick · 100 % lokal · macOS und Windows</text>
+</svg>

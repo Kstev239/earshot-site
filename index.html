@@ -3,15 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Earshot – Live-Untertitel für jedes Meeting, lokal auf deinem Rechner</title>
+    <title>Earshot – Untertitel und Rückblick für Online-Meetings, lokal auf deinem Rechner</title>
     <meta
       name="description"
-      content="Earshot zeigt Live-Untertitel auf dem Bildschirm, auf dem du arbeitest, meldet sich, wenn dein Name fällt, und fasst Meetings zusammen. Ohne Bot, ohne Cloud."
+      content="Earshot blendet Untertitel auf dem Bildschirm ein, an dem du arbeitest, markiert deinen Namen und zeigt auf Tastendruck, was du gefragt wurdest. Ohne Bot, ohne Cloud."
     />
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#131418" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="en" href="en/" />
-    <link rel="alternate" hreflang="de" href="./" />
+    <link rel="alternate" hreflang="en" href="https://kstev239.github.io/earshot-site/en/" />
+    <link rel="alternate" hreflang="de" href="https://kstev239.github.io/earshot-site/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kstev239.github.io/earshot-site/" />
+    <meta property="og:title" content="Earshot – Nie wieder „Kannst du die Frage wiederholen?“" />
+    <meta
+      property="og:description"
+      content="Untertitel auf dem Bildschirm, an dem du arbeitest. Dein Name leuchtet auf, ein Tastendruck zeigt, worum es ging. Läuft komplett lokal."
+    />
+    <meta property="og:image" content="https://kstev239.github.io/earshot-site/assets/og.png" />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="assets/style.css" />
     <script src="assets/site.js" defer></script>
   </head>
@@ -35,11 +46,12 @@
           Earshot
         </a>
         <nav class="site-nav" aria-label="Hauptnavigation">
-          <a class="hide-small" href="#funktionen">Funktionen</a>
+          <a class="hide-small" href="#ablauf">So läuft’s</a>
+          <a class="hide-small" href="#vergleich">Vergleich</a>
           <a class="hide-small" href="#lokal">Datenschutz</a>
           <a class="hide-small" href="#fragen">Fragen</a>
-          <a href="#download">Download</a>
           <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
+          <a class="nav-cta" href="#download">Kostenlos laden</a>
         </nav>
       </div>
     </header>
@@ -47,19 +59,21 @@
     <main id="inhalt">
       <div class="hero">
         <div class="wrap">
-          <div>
-            <span class="eyebrow">Kostenlose Beta · macOS und Windows</span>
-            <h1>Arbeite weiter. <em>Earshot</em> hört mit.</h1>
+          <div class="hero-copy">
+            <span class="eyebrow">Für Zoom, Teams, Meet und alles mit Ton</span>
+            <h1>
+              Nie wieder:
+              <span class="quote">„Kannst du die Frage nochmal wiederholen?“</span>
+            </h1>
             <p class="lede">
-              Live-Untertitel auf dem Bildschirm, auf dem du gerade arbeitest. Fällt dein Name,
-              meldet sich Earshot und sagt dir in Sekunden, worum es ging. Alles läuft lokal auf
-              deinem Rechner.
+              Earshot blendet die Untertitel deines Meetings auf dem Bildschirm ein, an dem du
+              gerade arbeitest. Sagt jemand deinen Namen, leuchtet er auf. Ein Tastendruck, und du
+              weißt, was du gefragt wurdest.
             </p>
             <div class="cta">
               <a
                 class="button primary"
                 href="#download"
-                data-hero-download
                 data-label-mac="Kostenlos für Mac laden"
                 data-label-windows="Kostenlos für Windows laden"
               >
@@ -75,218 +89,406 @@
                 </svg>
                 <span>Kostenlos laden</span>
               </a>
-              <a class="button secondary" href="#funktionen">So funktioniert’s</a>
+              <a class="button ghost" href="#ablauf">Ein Meeting mit Earshot</a>
             </div>
-            <p class="fineprint">
-              Funktioniert mit Zoom, Teams, Google Meet und jedem anderen Programm mit Ton.
+            <p class="reassure">
+              <span>Kostenlose Beta</span><span>Kein Konto</span><span>Läuft lokal</span>
             </p>
           </div>
 
-          <div
-            class="demo"
-            role="img"
-            aria-label="Beispiel: Untertitel unten auf dem Bildschirm, der Name Alex ist gelb markiert, daneben der Hinweis Worum ging’s?"
-          >
-            <div class="demo-window" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span>
+          <figure class="demo">
+            <div
+              class="stage"
+              data-demo
+              data-step="4"
+              role="img"
+              aria-label="Zwei Bildschirme: links das Meeting, rechts deine Arbeit. Die Untertitel stehen auf dem rechten Bildschirm, der Name Mira ist gelb markiert, darüber der Rückblick mit der Frage an dich."
+            >
+              <div class="screen">
+                <span class="screen-label">Bildschirm 1 · Meeting</span>
+                <div class="screen-inner meeting" aria-hidden="true">
+                  <div class="tile"><span>Jonas</span></div>
+                  <div class="tile talking"><span>Lena</span></div>
+                  <div class="tile"><span>Mira</span></div>
+                  <div class="tile"><span>Tobi</span></div>
+                </div>
+              </div>
+              <div class="screen">
+                <span class="screen-label">Bildschirm 2 · deine Arbeit</span>
+                <div class="screen-inner editor" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="overlay" aria-hidden="true">
+                <span class="line older">… die Kampagne startet dann am dritten März.</span>
+                <span class="line older">Fürs Budget fehlen uns noch rund zwölftausend Euro.</span>
+                <span class="line"><mark>Mira</mark>, reicht dein Topf dafür bis Ende Q1?</span>
+              </div>
+              <div class="recall" aria-hidden="true">
+                <strong>Worum ging’s? · letzte 90 s</strong>
+                <span>Kampagnenstart am 3. März. Fürs Budget fehlen rund 12.000 €.</span>
+                <span class="ask">Frage an dich: Reicht dein Budget bis Ende Q1?</span>
+              </div>
+              <svg class="cursor" viewBox="0 0 18 24" aria-hidden="true">
+                <path
+                  d="M1 1v19l5-4.5 3.4 7.4 3.2-1.5-3.3-7.2H16z"
+                  fill="#ffffff"
+                  stroke="#111"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
-            <div class="overlay" aria-hidden="true">
-              <span class="line">… die Zahlen für Q1 sehen ordentlich aus.</span>
-              <span class="line">Beim Budget sind wir aber noch nicht durch.</span>
-              <span class="line">Was meinst du dazu, <mark>Alex</mark>?</span>
-            </div>
-            <span class="chip" aria-hidden="true">⌥⌘R · Worum ging’s?</span>
-          </div>
+            <figcaption class="demo-controls">
+              <button type="button" class="key-button" data-demo-key>⌥⌘R · Worum ging’s?</button>
+              <button type="button" class="replay" data-demo-replay>Nochmal abspielen</button>
+            </figcaption>
+            <p class="demo-caption">
+              Die Maus wandert auf den zweiten Bildschirm, die Untertitel kommen mit.
+            </p>
+          </figure>
         </div>
       </div>
 
-      <section class="problem" aria-labelledby="problem-h">
+      <section id="ablauf" class="band-paper" aria-labelledby="ablauf-h">
         <div class="wrap">
-          <h2 id="problem-h" class="quote">
-            „Was meinst du dazu, <mark>Alex</mark>?“ Stille. „Kannst du die Frage nochmal
-            wiederholen?“
-          </h2>
-          <p class="after">
-            Viele sitzen täglich in Meetings, in denen sie nur ab und zu gefragt sind. Nebenher
-            arbeiten sie weiter und verlieren den Faden. Earshot ist dein zweites Ohr: Es läuft
-            leise mit, holt dich zurück, wenn es dich betrifft, und erinnert sich hinterher für
-            dich.
+          <div class="section-head reveal">
+            <span class="eyebrow">Ein Dienstag mit Earshot</span>
+            <h2 id="ablauf-h">Du bist im Meeting. Nebenbei arbeitest du weiter.</h2>
+          </div>
+          <ol class="day">
+            <li class="moment reveal">
+              <time>10:00</time>
+              <div class="text">
+                <h3>Das Weekly beginnt. Du schreibst weiter.</h3>
+                <p>
+                  <kbd>⌥⌘M</kbd> oder ein Klick auf das Ohr in der Menüleiste. Ab jetzt laufen die
+                  Untertitel leise am unteren Rand des Bildschirms mit, auf dem deine Maus gerade
+                  ist.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <div class="menubar">
+                  <svg viewBox="0 0 16 16">
+                    <path
+                      d="M11 5C9.75 3.25 7.25 2.75 5.5 4C3.75 5.25 3.5 8 4.75 9.75C5.5 10.9 6.5 11.5 7.75 11.9"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <span>Di. 10:00</span>
+                </div>
+                <div class="menu">
+                  <span>Meeting starten <kbd>⌥⌘M</kbd></span>
+                  <span>Worum ging’s? <kbd>⌥⌘R</kbd></span>
+                  <span>Earshot öffnen</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>10:14</time>
+              <div class="text">
+                <h3>Lena sagt deinen Namen.</h3>
+                <p>
+                  Er wird gelb hinterlegt, links pulsiert einmal ein Balken. Kein Ton, kein Fenster,
+                  das sich in den Vordergrund drängt. Du merkst es trotzdem.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="muted">Fürs Budget fehlen uns noch rund zwölftausend Euro.</span>
+                <span><mark>Mira</mark>, reicht dein Topf dafür bis Ende Q1?</span>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>10:14</time>
+              <div class="text">
+                <h3>Fünf Sekunden später bist du wieder drin.</h3>
+                <p>
+                  <kbd>⌥⌘R</kbd> fasst die letzten anderthalb Minuten zusammen und stellt die Frage
+                  an dich ganz nach oben. Du antwortest, als wärst du die ganze Zeit dabei gewesen.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="label">Worum ging’s?</span>
+                <span>Kampagnenstart am 3. März. Fürs Budget fehlen rund 12.000 €.</span>
+                <span class="ask">Frage an dich: Reicht dein Budget bis Ende Q1?</span>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>10:45</time>
+              <div class="text">
+                <h3>Das Protokoll ist schon fertig.</h3>
+                <p>
+                  Zusammenfassung, Beschlüsse, Aufgaben. Aus „bis Freitag“ wird ein Datum. Ob das
+                  Meeting gespeichert wird, entscheidest du, nicht die App.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="label">Weekly Marketing · 45 min</span>
+                <span>Kampagne startet am 3. März. Budgetlücke ca. 12.000 €.</span>
+                <span class="task"
+                  >Mira: Budget bis Q1 prüfen <span class="due">Fr. 20.11.</span></span
+                >
+                <span class="task"
+                  >Jonas: Motive an die Agentur <span class="due">Mo. 23.11.</span></span
+                >
+                <span class="task">Lena: Termin mit Vertrieb</span>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>+ 7 Tage</time>
+              <div class="text">
+                <h3>„Was hatten wir zum Budget beschlossen?“</h3>
+                <p>
+                  Frag deine gespeicherten Meetings in eigenen Worten. Die Antwort sagt dir, woher
+                  sie stammt, und ein Klick springt an die Stelle im Transkript.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="question">Was hatten wir zum Budget beschlossen?</span>
+                <span
+                  >Mira prüft bis 20.11., ob ihr Budget die Lücke von rund 12.000 € bis Ende Q1
+                  deckt.</span
+                >
+                <span class="source">Quelle: Weekly Marketing, Di. 17.11., 10:14</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="vergleich" class="band-white" aria-labelledby="vergleich-h">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Vergleich</span>
+            <h2 id="vergleich-h">Gibt’s das nicht schon?</h2>
+            <p>
+              Untertitel ja. Aber die stehen im Meeting-Fenster, das gerade hinter deinem Editor
+              liegt. Und Notizbots sitzen als zusätzlicher Teilnehmer im Call und schicken alles in
+              die Cloud.
+            </p>
+          </div>
+          <div class="table-scroll reveal">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Funktion</span></th>
+                  <th scope="col" class="us">Earshot</th>
+                  <th scope="col">Untertitel in Zoom, Teams, Meet</th>
+                  <th scope="col">Live-Untertitel von macOS / Windows</th>
+                  <th scope="col">Cloud-Notizbots</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Untertitel auf dem Bildschirm, an dem du arbeitest</th>
+                  <td class="us yes">Ja</td>
+                  <td class="no">Nein</td>
+                  <td class="part">fester Platz</td>
+                  <td class="no">Nein</td>
+                </tr>
+                <tr>
+                  <th scope="row">Hinweis, wenn dein Name fällt</th>
+                  <td class="us yes">Ja</td>
+                  <td class="no">Nein</td>
+                  <td class="no">Nein</td>
+                  <td class="no">Nein</td>
+                </tr>
+                <tr>
+                  <th scope="row">„Worum ging’s?“ mitten im Meeting</th>
+                  <td class="us yes">Ja</td>
+                  <td class="part">mit KI-Zusatzabo</td>
+                  <td class="no">Nein</td>
+                  <td class="part">teilweise</td>
+                </tr>
+                <tr>
+                  <th scope="row">Zusammenfassung und Aufgaben</th>
+                  <td class="us yes">Ja</td>
+                  <td class="part">mit KI-Zusatzabo</td>
+                  <td class="no">Nein</td>
+                  <td class="yes">Ja</td>
+                </tr>
+                <tr>
+                  <th scope="row">Funktioniert mit jedem Meeting-Programm</th>
+                  <td class="us yes">Ja</td>
+                  <td class="no">nur im eigenen</td>
+                  <td class="yes">Ja</td>
+                  <td class="part">nur unterstützte</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kein Bot im Meeting</th>
+                  <td class="us yes">Ja</td>
+                  <td class="yes">Ja</td>
+                  <td class="yes">Ja</td>
+                  <td class="no">Nein</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gespräch bleibt auf deinem Rechner</th>
+                  <td class="us yes">Ja</td>
+                  <td class="no">Nein</td>
+                  <td class="yes">Ja</td>
+                  <td class="no">Nein</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="footnote">
+            Vereinfacht, Stand November 2026. Zusammenfassungen in Zoom und Teams gibt es mit
+            KI-Zusatzpaketen, die in der Cloud rechnen.
           </p>
         </div>
       </section>
 
-      <section id="funktionen" aria-labelledby="funktionen-h">
+      <section class="band-paper" aria-labelledby="wer-h">
         <div class="wrap">
-          <div class="section-head">
-            <span class="eyebrow">Funktionen</span>
-            <h2 id="funktionen-h">Mitbekommen, ohne die ganze Zeit zuzuhören</h2>
+          <div class="section-head reveal">
+            <span class="eyebrow">Für wen</span>
+            <h2 id="wer-h">Gebaut für Leute, die in zu vielen Calls sitzen</h2>
           </div>
-          <div class="features">
-            <article class="feature">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <rect
-                    x="3"
-                    y="6"
-                    width="18"
-                    height="12"
-                    rx="3"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  />
-                  <path
-                    d="M7 11h10M7 14.5h6"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-              <h3>Untertitel, die dir folgen</h3>
+          <div class="people">
+            <article class="person reveal">
+              <h3>Fünf Calls am Tag, in jedem zwei Minuten gefragt</h3>
+              <p>Du musst nicht jedes Wort hören. Du musst nur wissen, wann es um dich geht.</p>
+            </article>
+            <article class="person reveal">
+              <h3>ADHS oder einfach ein langer Tag</h3>
               <p>
-                Die Untertitel erscheinen auf dem Bildschirm, auf dem deine Maus ist, unaufdringlich
-                und durchklickbar. Du arbeitest im Editor, im Browser oder in der Tabelle weiter.
+                Gedanklich abbiegen passiert. Mit dem Rückblick bist du in Sekunden zurück, ohne vor
+                allen nachfragen zu müssen.
               </p>
             </article>
-            <article class="feature">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M16.5 7.5C15 5 11.5 4.3 9 6S5.5 11.5 7 14c1 1.6 2.4 2.5 4 3"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                  <circle cx="12.5" cy="10.8" r="2" fill="currentColor" />
-                </svg>
-              </span>
-              <h3>Dein Name fällt? Du weißt Bescheid.</h3>
+            <article class="person reveal">
+              <h3>Schwerhörig, lautes Büro, fremde Sprache</h3>
               <p>
-                Earshot markiert deinen Namen und zeigt mit <kbd>⌥⌘R</kbd> bzw.
-                <kbd>Strg+Alt+R</kbd> in Sekunden, worum es gerade ging und was du gefragt wurdest.
+                Mitlesen hilft, wenn der Ton schlecht ist, das Meeting-Programm keine Untertitel hat
+                oder alle schnell Englisch sprechen.
               </p>
             </article>
-            <article class="feature">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M10 11h5M10 14.5h5M10 18h3"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-              <h3>Notizen, die sich selbst schreiben</h3>
+            <article class="person reveal">
+              <h3>Firmen, in denen Notizbots verboten sind</h3>
               <p>
-                Nach dem Meeting: Zusammenfassung, Beschlüsse und Aufgaben mit Fälligkeit.
-                Durchsuchbar, nach Projekten sortiert, und du kannst deine Meetings einfach fragen.
+                Kein Bot im Call, keine Daten bei Dritten. Damit ist Earshot oft erlaubt, wo
+                Cloud-Werkzeuge an der IT scheitern.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="lokal" class="local" aria-labelledby="lokal-h">
+      <section id="lokal" class="band-night" aria-labelledby="lokal-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">100 % lokal</span>
-            <h2 id="lokal-h">Kein Bot im Meeting. Keine Cloud.</h2>
+            <h2 id="lokal-h">Kein Bot im Meeting. Keine Cloud. Prüf es nach.</h2>
             <p>
-              Spracherkennung und Sprachmodell laufen auf deinem Rechner. Deshalb funktioniert
-              Earshot auch dort, wo Cloud-Notizbots verboten sind.
+              Spracherkennung und Sprachmodell laufen auf deinem Rechner, auch ohne Internet. Selbst
+              ich als Entwickler komme an deine Meetings nicht heran.
             </p>
           </div>
-          <div class="promises">
-            <div class="promise">
-              <h3>Gespräche bleiben auf deinem Rechner</h3>
-              <p>
-                Ton und Text werden nirgendwohin geschickt. Es gibt kein Konto und keinen Server.
-              </p>
-            </div>
-            <div class="promise">
-              <h3>Keine Audioaufnahme</h3>
-              <p>
-                Earshot speichert nie Ton. Text landet nur auf der Festplatte, wenn du ein Meeting
-                speicherst.
-              </p>
-            </div>
-            <div class="promise">
-              <h3>Verschlüsselt abgelegt</h3>
-              <p>
-                Gespeicherte Meetings liegen in einer verschlüsselten Datenbank, der Schlüssel im
-                Schlüsselbund deines Systems.
-              </p>
-            </div>
-            <div class="promise">
-              <h3>Niemand im Meeting merkt etwas</h3>
-              <p>
-                Earshot hört über den Systemton mit. Es tritt keinem Meeting bei und braucht keine
-                Erlaubnis vom Gastgeber.
+          <div class="privacy-grid">
+            <ul class="promises reveal">
+              <li>
+                <strong>Kein Ton auf der Festplatte</strong>
+                <span>Earshot hört über den Systemton mit und nimmt nichts auf.</span>
+              </li>
+              <li>
+                <strong>Gespeichert wird nur, was du speicherst</strong>
+                <span
+                  >Nach dem Meeting entscheidest du. Speicherst du nicht, ist das Transkript weg,
+                  sobald du die App beendest.</span
+                >
+              </li>
+              <li>
+                <strong>Verschlüsselt</strong>
+                <span
+                  >Gespeicherte Meetings liegen in einer verschlüsselten Datenbank, der Schlüssel im
+                  Schlüsselbund deines Systems.</span
+                >
+              </li>
+              <li>
+                <strong>Kein Konto, kein Tracking</strong>
+                <span>Es gibt keinen Server, an den Earshot etwas über dich schicken könnte.</span>
+              </li>
+            </ul>
+            <div class="reveal">
+              <div class="terminal">
+                <div class="terminal-bar">
+                  <i></i><i></i><i></i> Terminal · während eines Meetings
+                </div>
+                <pre><span class="prompt">$</span> <span id="netcheck">lsof -nP -i -a -p $(pgrep -x earshot)</span>
+<span class="dim"># keine Ausgabe: keine einzige Netzwerkverbindung</span></pre>
+                <div class="terminal-foot">
+                  <span>macOS, im Terminal, während ein Meeting läuft</span>
+                  <button type="button" class="copy" data-copy="netcheck" data-done="Kopiert ✓">
+                    Befehl kopieren
+                  </button>
+                </div>
+              </div>
+              <p class="zero">
+                <b>0</b>
+                <span
+                  >Verbindungen während eines Meetings. Ins Netz geht Earshot nur, um Modelle zu
+                  laden und nach Updates zu suchen.</span
+                >
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="start-h">
+      <section class="band-paper" aria-labelledby="start-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Loslegen</span>
             <h2 id="start-h">In drei Schritten zum ersten Untertitel</h2>
           </div>
           <ol class="steps">
-            <li>
+            <li class="reveal">
               <h3>Installieren</h3>
               <p>
-                Earshot laden und öffnen. Auf dem Mac erlaubst du einmal die Bildschirm- und
-                Systemaudio-Aufnahme.
+                Laden, öffnen, fertig. Auf dem Mac gibst du einmal die Systemaudio-Aufnahme frei.
+                Unter Windows braucht es keine Administratorrechte.
               </p>
             </li>
-            <li>
+            <li class="reveal">
               <h3>Sprachmodell laden</h3>
               <p>
-                Einmalig, je nach Modell rund 0,2 bis 5 GB. Earshot empfiehlt das passende für
-                deinen Rechner.
+                Einmalig 0,2 bis 5 GB, je nach Modell. Earshot misst kurz, was dein Rechner schafft,
+                und schlägt das passende vor.
               </p>
             </li>
-            <li>
+            <li class="reveal">
               <h3>Meeting starten</h3>
               <p>
-                Über das Symbol in der Menüleiste oder mit <kbd>⌥⌘M</kbd> bzw.
-                <kbd>Strg+Alt+M</kbd>. Die Untertitel kommen nach etwa einer Sekunde.
+                <kbd>⌥⌘M</kbd> bzw. <kbd>Strg+Alt+M</kbd>. Eine Sekunde nach dem Satzende steht er
+                als Untertitel da.
               </p>
             </li>
           </ol>
         </div>
       </section>
 
-      <section id="download" class="download" aria-labelledby="download-h">
+      <section id="download" class="band-white" aria-labelledby="download-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head download-head reveal">
             <span class="eyebrow">Download</span>
-            <h2 id="download-h">Kostenlos ausprobieren</h2>
-            <p>
-              Die Beta ist kostenlos. Später gibt es eine Gratis-Version und ein Pro-Abo für
-              Rückblick ohne Grenzen und das Meeting-Gedächtnis.
-            </p>
+            <h2 id="download-h">Probier es im nächsten Meeting aus</h2>
+            <p>Während der Beta kostenlos. Kein Konto, keine Kreditkarte, keine E-Mail-Adresse.</p>
           </div>
           <div class="platforms">
-            <article class="platform" data-platform="mac">
+            <article class="platform reveal" data-platform="mac">
+              <span class="badge">Dein System</span>
               <h3>macOS</h3>
               <ul>
                 <li>macOS 13 Ventura oder neuer</li>
                 <li>Apple Silicon (M1 und neuer) oder Intel</li>
-                <li>8 GB Arbeitsspeicher, für Zusammenfassungen 16 GB empfohlen</li>
+                <li>8 GB Arbeitsspeicher, für Zusammenfassungen besser 16 GB</li>
               </ul>
               <div class="links">
                 <a
@@ -295,21 +497,22 @@
                   >Für Apple Silicon</a
                 >
                 <a
-                  class="button secondary"
+                  class="button ghost"
                   href="https://github.com/Kstev239/earshot-site/releases/latest/download/Earshot-mac-intel.dmg"
                   >Für Intel-Mac</a
                 >
               </div>
               <p class="note">
-                Welcher Mac? Apple-Menü → „Über diesen Mac“: Steht bei Chip „Apple M…“, nimm Apple
+                Welcher Mac? Apple-Menü → „Über diesen Mac“. Steht bei Chip „Apple M…“, nimm Apple
                 Silicon.
               </p>
             </article>
-            <article class="platform" data-platform="windows">
+            <article class="platform reveal" data-platform="windows">
+              <span class="badge">Dein System</span>
               <h3>Windows</h3>
               <ul>
                 <li>Windows 10 oder 11, 64 Bit</li>
-                <li>8 GB Arbeitsspeicher, für Zusammenfassungen 16 GB empfohlen</li>
+                <li>8 GB Arbeitsspeicher, für Zusammenfassungen besser 16 GB</li>
                 <li>Installation ohne Administratorrechte</li>
               </ul>
               <div class="links">
@@ -320,70 +523,93 @@
                 >
               </div>
               <p class="note">
-                In der Beta ist der Windows-Installer noch nicht signiert. Windows warnt dann vor
-                einem „unbekannten Herausgeber“: „Weitere Informationen“ → „Trotzdem ausführen“.
+                In der Beta ist der Installer noch nicht signiert. Windows warnt dann vor einem
+                „unbekannten Herausgeber“: „Weitere Informationen“ → „Trotzdem ausführen“.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="fragen" aria-labelledby="fragen-h">
+      <section id="fragen" class="band-paper" aria-labelledby="fragen-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Fragen</span>
-            <h2 id="fragen-h">Gut zu wissen</h2>
+            <h2 id="fragen-h">Was Leute als Erstes fragen</h2>
           </div>
-          <div class="faq">
+          <div class="faq reveal">
             <details>
-              <summary>Mit welchen Meeting-Programmen funktioniert Earshot?</summary>
+              <summary>Mit welchen Meeting-Programmen funktioniert das?</summary>
               <p>
-                Mit allen, die über deinen Rechner Ton abspielen: Zoom, Microsoft Teams, Google
-                Meet, Webex, Slack-Huddles, Discord und auch Videos im Browser. Earshot setzt am
-                Systemton an, nicht an einem bestimmten Programm.
+                Mit allem, was auf deinem Rechner Ton abspielt: Zoom, Teams, Google Meet, Webex,
+                Slack-Huddles, Discord, auch ein Video im Browser. Earshot hört auf den Systemton,
+                nicht auf ein bestimmtes Programm.
               </p>
             </details>
             <details>
-              <summary>Muss ich die anderen Teilnehmer informieren?</summary>
+              <summary>Muss ich den anderen Bescheid sagen?</summary>
               <p>
-                Earshot nimmt keinen Ton auf und speichert Text nur, wenn du es willst. Trotzdem ist
-                es fair und in vielen Firmen üblich, kurz Bescheid zu sagen. Earshot bietet dafür
-                einen fertigen Hinweistext zum Kopieren. Was in deinem Fall rechtlich gilt, hängt
-                vom Land und deinem Arbeitgeber ab.
+                Earshot nimmt keinen Ton auf und speichert Text nur, wenn du es willst. Bescheid zu
+                sagen ist trotzdem fair und in vielen Firmen üblich. In der App gibt es dafür einen
+                Satz zum Kopieren. Was rechtlich gilt, hängt von deinem Land und deinem Arbeitgeber
+                ab.
               </p>
             </details>
             <details>
-              <summary>Braucht Earshot Internet?</summary>
+              <summary>Wie gut ist die Erkennung?</summary>
               <p>
-                Nur zum einmaligen Laden der Sprachmodelle und um nach Updates zu suchen. Während
-                eines Meetings baut Earshot keine Verbindung auf. Inhalte deiner Meetings verlassen
-                nie deinen Rechner.
+                Earshot nutzt Whisper, ein verbreitetes Spracherkennungsmodell, direkt auf deinem
+                Rechner. Bei klarer Sprache sind die Untertitel sehr genau. Bei schlechtem Mikrofon
+                oder vielen Fachbegriffen gibt es Fehler, wie bei jeder Spracherkennung.
               </p>
             </details>
             <details>
-              <summary>Welche Sprachen versteht Earshot?</summary>
+              <summary>Welche Sprachen?</summary>
               <p>
-                Gedacht ist Earshot für Deutsch und Englisch. In den Einstellungen gibt es
-                zusätzlich die automatische Spracherkennung, die auch weitere Sprachen versteht,
-                dann aber weniger zuverlässig ist. Die App selbst gibt es auf Deutsch und Englisch.
+                Deutsch und Englisch. In den Einstellungen kannst du auch die automatische
+                Spracherkennung wählen. Die versteht mehr Sprachen, ist aber weniger zuverlässig.
+              </p>
+            </details>
+            <details>
+              <summary>Bremst das meinen Rechner aus?</summary>
+              <p>
+                Während eines Meetings arbeitet die Spracherkennung, das merkt man am Lüfter eher
+                als an der Geschwindigkeit. Ohne Meeting tut Earshot praktisch nichts. Für
+                Zusammenfassungen und Rückblick sind 16 GB Arbeitsspeicher angenehm.
               </p>
             </details>
             <details>
               <summary>Was kostet Earshot?</summary>
               <p>
-                Während der Beta nichts. Danach bleiben Live-Untertitel und der Hinweis bei deinem
-                Namen kostenlos. Unbegrenzte Rückblicke, Zusammenfassungen und das
-                Meeting-Gedächtnis gibt es dann im Pro-Abo.
+                In der Beta nichts. Danach bleiben Untertitel und der Hinweis bei deinem Namen
+                kostenlos. Unbegrenzter Rückblick, Zusammenfassungen und das Meeting-Gedächtnis
+                kommen in ein Pro-Abo.
               </p>
             </details>
             <details>
-              <summary>Wo bekomme ich Hilfe oder kann Feedback geben?</summary>
+              <summary>Wo melde ich Fehler oder Wünsche?</summary>
               <p>
-                Schreib an <a href="mailto:Kelmsteven8@gmail.com">Kelmsteven8@gmail.com</a>. Über
-                Feedback aus der Beta freue ich mich besonders.
+                Per Mail an <a href="mailto:Kelmsteven8@gmail.com">Kelmsteven8@gmail.com</a>.
+                Earshot baut eine einzelne Person, jede Rückmeldung kommt an.
               </p>
             </details>
           </div>
+        </div>
+      </section>
+
+      <section class="band-night closing" aria-labelledby="closing-h">
+        <div class="wrap reveal">
+          <h2 id="closing-h">Dein nächstes Meeting kommt bestimmt.</h2>
+          <p>
+            Installier Earshot vorher. Es kostet nichts, und du merkst im ersten Call, ob es passt.
+          </p>
+          <a
+            class="button primary"
+            href="#download"
+            data-label-mac="Kostenlos für Mac laden"
+            data-label-windows="Kostenlos für Windows laden"
+            ><span>Kostenlos laden</span></a
+          >
         </div>
       </section>
     </main>

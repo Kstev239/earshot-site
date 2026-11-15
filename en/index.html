@@ -3,15 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Earshot – Live captions for every meeting, right on your computer</title>
+    <title>Earshot – Captions and recaps for online meetings, right on your computer</title>
     <meta
       name="description"
-      content="Earshot shows live captions on the screen you are working on, speaks up when your name comes up, and summarizes your meetings. No bot, no cloud."
+      content="Earshot shows your meeting’s captions on the screen you’re working on, highlights your name and tells you at a keystroke what you were asked. No bot, no cloud."
     />
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#131418" />
     <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="de" href="../" />
-    <link rel="alternate" hreflang="en" href="./" />
+    <link rel="alternate" hreflang="de" href="https://kstev239.github.io/earshot-site/" />
+    <link rel="alternate" hreflang="en" href="https://kstev239.github.io/earshot-site/en/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kstev239.github.io/earshot-site/en/" />
+    <meta property="og:title" content="Earshot – Never again “Could you repeat the question?”" />
+    <meta
+      property="og:description"
+      content="Captions on the screen you’re working on. Your name lights up, one keystroke tells you what it was about. Runs entirely on your computer."
+    />
+    <meta property="og:image" content="https://kstev239.github.io/earshot-site/assets/og-en.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="../assets/style.css" />
     <script src="../assets/site.js" defer></script>
   </head>
@@ -35,11 +46,12 @@
           Earshot
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-          <a class="hide-small" href="#features">Features</a>
+          <a class="hide-small" href="#day">How it works</a>
+          <a class="hide-small" href="#compare">Compare</a>
           <a class="hide-small" href="#local">Privacy</a>
           <a class="hide-small" href="#faq">FAQ</a>
-          <a href="#download">Download</a>
           <a class="lang" href="../" hreflang="de" lang="de">DE</a>
+          <a class="nav-cta" href="#download">Download free</a>
         </nav>
       </div>
     </header>
@@ -47,19 +59,20 @@
     <main id="content">
       <div class="hero">
         <div class="wrap">
-          <div>
-            <span class="eyebrow">Free beta · macOS and Windows</span>
-            <h1>Keep working. <em>Earshot</em> listens in.</h1>
+          <div class="hero-copy">
+            <span class="eyebrow">For Zoom, Teams, Meet and anything with sound</span>
+            <h1>
+              Never again:
+              <span class="quote">“Sorry, could you repeat the question?”</span>
+            </h1>
             <p class="lede">
-              Live captions on the screen you are working on. When your name comes up, Earshot lets
-              you know and tells you in seconds what it was about. Everything runs locally on your
-              computer.
+              Earshot shows your meeting’s captions on the screen you’re actually working on. When
+              someone says your name, it lights up. One keystroke, and you know what you were asked.
             </p>
             <div class="cta">
               <a
                 class="button primary"
                 href="#download"
-                data-hero-download
                 data-label-mac="Download free for Mac"
                 data-label-windows="Download free for Windows"
               >
@@ -75,211 +88,407 @@
                 </svg>
                 <span>Download free</span>
               </a>
-              <a class="button secondary" href="#features">How it works</a>
+              <a class="button ghost" href="#day">A meeting with Earshot</a>
             </div>
-            <p class="fineprint">
-              Works with Zoom, Teams, Google Meet and any other app that plays sound.
+            <p class="reassure">
+              <span>Free beta</span><span>No account</span><span>Runs locally</span>
             </p>
           </div>
 
-          <div
-            class="demo"
-            role="img"
-            aria-label="Example: captions at the bottom of the screen, the name Alex highlighted in yellow, next to it the hint What was that about?"
-          >
-            <div class="demo-window" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span>
+          <figure class="demo">
+            <div
+              class="stage"
+              data-demo
+              data-step="4"
+              role="img"
+              aria-label="Two screens: the meeting on the left, your work on the right. The captions sit on the right screen, the name Mira is highlighted in yellow, above it the recap with the question for you."
+            >
+              <div class="screen">
+                <span class="screen-label">Screen 1 · meeting</span>
+                <div class="screen-inner meeting" aria-hidden="true">
+                  <div class="tile"><span>Jonas</span></div>
+                  <div class="tile talking"><span>Lena</span></div>
+                  <div class="tile"><span>Mira</span></div>
+                  <div class="tile"><span>Tobi</span></div>
+                </div>
+              </div>
+              <div class="screen">
+                <span class="screen-label">Screen 2 · your work</span>
+                <div class="screen-inner editor" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="overlay" aria-hidden="true">
+                <span class="line older">… so the campaign goes live on March third.</span>
+                <span class="line older">We’re still about twelve thousand short on budget.</span>
+                <span class="line"
+                  ><mark>Mira</mark>, does your budget cover it until end of Q1?</span
+                >
+              </div>
+              <div class="recall" aria-hidden="true">
+                <strong>What was that? · last 90 s</strong>
+                <span>Campaign starts March 3. The budget is about 12,000 € short.</span>
+                <span class="ask"
+                  >Question for you: does your budget cover it until end of Q1?</span
+                >
+              </div>
+              <svg class="cursor" viewBox="0 0 18 24" aria-hidden="true">
+                <path
+                  d="M1 1v19l5-4.5 3.4 7.4 3.2-1.5-3.3-7.2H16z"
+                  fill="#ffffff"
+                  stroke="#111"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
-            <div class="overlay" aria-hidden="true">
-              <span class="line">… the Q1 numbers look solid.</span>
-              <span class="line">We’re not done with the budget yet, though.</span>
-              <span class="line">What do you think, <mark>Alex</mark>?</span>
-            </div>
-            <span class="chip" aria-hidden="true">⌥⌘R · What was that about?</span>
-          </div>
+            <figcaption class="demo-controls">
+              <button type="button" class="key-button" data-demo-key>⌥⌘R · What was that?</button>
+              <button type="button" class="replay" data-demo-replay>Play again</button>
+            </figcaption>
+            <p class="demo-caption">The mouse moves to the second screen, the captions follow.</p>
+          </figure>
         </div>
       </div>
 
-      <section class="problem" aria-labelledby="problem-h">
+      <section id="day" class="band-paper" aria-labelledby="day-h">
         <div class="wrap">
-          <h2 id="problem-h" class="quote">
-            “What do you think, <mark>Alex</mark>?” Silence. “Sorry, could you repeat the question?”
-          </h2>
-          <p class="after">
-            Many of us sit in meetings every day where we are only needed now and then. We keep
-            working on the side and lose the thread. Earshot is your second ear: it quietly runs
-            along, pulls you back when it concerns you, and remembers for you afterwards.
+          <div class="section-head reveal">
+            <span class="eyebrow">A Tuesday with Earshot</span>
+            <h2 id="day-h">You’re in the meeting. And you keep working.</h2>
+          </div>
+          <ol class="day">
+            <li class="moment reveal">
+              <time>10:00</time>
+              <div class="text">
+                <h3>The weekly starts. You keep writing.</h3>
+                <p>
+                  <kbd>⌥⌘M</kbd> or a click on the ear in the menu bar. From now on, captions run
+                  quietly along the bottom of whichever screen your mouse is on.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <div class="menubar">
+                  <svg viewBox="0 0 16 16">
+                    <path
+                      d="M11 5C9.75 3.25 7.25 2.75 5.5 4C3.75 5.25 3.5 8 4.75 9.75C5.5 10.9 6.5 11.5 7.75 11.9"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <span>Tue 10:00</span>
+                </div>
+                <div class="menu">
+                  <span>Start meeting <kbd>⌥⌘M</kbd></span>
+                  <span>What was that? <kbd>⌥⌘R</kbd></span>
+                  <span>Open Earshot</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>10:14</time>
+              <div class="text">
+                <h3>Lena says your name.</h3>
+                <p>
+                  It gets a yellow highlight and a bar on the left pulses once. No sound, no window
+                  jumping to the front. You notice anyway.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="muted">We’re still about twelve thousand short on budget.</span>
+                <span><mark>Mira</mark>, does your budget cover it until end of Q1?</span>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>10:14</time>
+              <div class="text">
+                <h3>Five seconds later you’re back in.</h3>
+                <p>
+                  <kbd>⌥⌘R</kbd> sums up the last minute and a half and puts the question for you at
+                  the top. You answer as if you’d been listening all along.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="label">What was that?</span>
+                <span>Campaign starts March 3. The budget is about 12,000 € short.</span>
+                <span class="ask"
+                  >Question for you: does your budget cover it until end of Q1?</span
+                >
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>10:45</time>
+              <div class="text">
+                <h3>The notes are already written.</h3>
+                <p>
+                  Summary, decisions, tasks. “By Friday” becomes an actual date. Whether the meeting
+                  gets saved is your call, not the app’s.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="label">Marketing weekly · 45 min</span>
+                <span>Campaign goes live March 3. Budget gap about 12,000 €.</span>
+                <span class="task"
+                  >Mira: check budget until Q1 <span class="due">Fri Nov 20</span></span
+                >
+                <span class="task"
+                  >Jonas: send visuals to agency <span class="due">Mon Nov 23</span></span
+                >
+                <span class="task">Lena: set up call with sales</span>
+              </div>
+            </li>
+
+            <li class="moment reveal">
+              <time>+ 7 days</time>
+              <div class="text">
+                <h3>“What did we decide about the budget?”</h3>
+                <p>
+                  Ask your saved meetings in your own words. The answer tells you where it comes
+                  from, and one click jumps to the spot in the transcript.
+                </p>
+              </div>
+              <div class="scene" aria-hidden="true">
+                <span class="question">What did we decide about the budget?</span>
+                <span
+                  >Mira checks by Nov 20 whether her budget covers the roughly 12,000 € gap until
+                  end of Q1.</span
+                >
+                <span class="source">Source: Marketing weekly, Tue Nov 17, 10:14</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="compare" class="band-white" aria-labelledby="compare-h">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <span class="eyebrow">Compare</span>
+            <h2 id="compare-h">Doesn’t this exist already?</h2>
+            <p>
+              Captions, yes. But they live in the meeting window, which is currently behind your
+              editor. And note-taking bots join the call as an extra participant and send everything
+              to the cloud.
+            </p>
+          </div>
+          <div class="table-scroll reveal">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Feature</span></th>
+                  <th scope="col" class="us">Earshot</th>
+                  <th scope="col">Captions in Zoom, Teams, Meet</th>
+                  <th scope="col">Live captions in macOS / Windows</th>
+                  <th scope="col">Cloud note-taking bots</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Captions on the screen you’re working on</th>
+                  <td class="us yes">Yes</td>
+                  <td class="no">No</td>
+                  <td class="part">fixed position</td>
+                  <td class="no">No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Alert when your name comes up</th>
+                  <td class="us yes">Yes</td>
+                  <td class="no">No</td>
+                  <td class="no">No</td>
+                  <td class="no">No</td>
+                </tr>
+                <tr>
+                  <th scope="row">“What was that?” in the middle of a meeting</th>
+                  <td class="us yes">Yes</td>
+                  <td class="part">with AI add-on</td>
+                  <td class="no">No</td>
+                  <td class="part">partly</td>
+                </tr>
+                <tr>
+                  <th scope="row">Summary and tasks</th>
+                  <td class="us yes">Yes</td>
+                  <td class="part">with AI add-on</td>
+                  <td class="no">No</td>
+                  <td class="yes">Yes</td>
+                </tr>
+                <tr>
+                  <th scope="row">Works with any meeting app</th>
+                  <td class="us yes">Yes</td>
+                  <td class="no">only their own</td>
+                  <td class="yes">Yes</td>
+                  <td class="part">supported ones only</td>
+                </tr>
+                <tr>
+                  <th scope="row">No bot in the meeting</th>
+                  <td class="us yes">Yes</td>
+                  <td class="yes">Yes</td>
+                  <td class="yes">Yes</td>
+                  <td class="no">No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Conversation stays on your computer</th>
+                  <td class="us yes">Yes</td>
+                  <td class="no">No</td>
+                  <td class="yes">Yes</td>
+                  <td class="no">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="footnote">
+            Simplified, as of November 2026. Summaries in Zoom and Teams come with AI add-ons that
+            run in the cloud.
           </p>
         </div>
       </section>
 
-      <section id="features" aria-labelledby="features-h">
+      <section class="band-paper" aria-labelledby="who-h">
         <div class="wrap">
-          <div class="section-head">
-            <span class="eyebrow">Features</span>
-            <h2 id="features-h">Stay in the loop without listening all the time</h2>
+          <div class="section-head reveal">
+            <span class="eyebrow">Who it’s for</span>
+            <h2 id="who-h">Made for people who sit in too many calls</h2>
           </div>
-          <div class="features">
-            <article class="feature">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <rect
-                    x="3"
-                    y="6"
-                    width="18"
-                    height="12"
-                    rx="3"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  />
-                  <path
-                    d="M7 11h10M7 14.5h6"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-              <h3>Captions that follow you</h3>
+          <div class="people">
+            <article class="person reveal">
+              <h3>Five calls a day, needed for two minutes in each</h3>
+              <p>You don’t have to hear every word. You only need to know when it’s about you.</p>
+            </article>
+            <article class="person reveal">
+              <h3>ADHD, or just a long day</h3>
               <p>
-                Captions appear on the screen your mouse is on, unobtrusive and click-through. Keep
-                working in your editor, browser or spreadsheet.
+                Your mind wanders. With the recap you’re back in seconds, without asking in front of
+                everyone.
               </p>
             </article>
-            <article class="feature">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M16.5 7.5C15 5 11.5 4.3 9 6S5.5 11.5 7 14c1 1.6 2.4 2.5 4 3"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                  <circle cx="12.5" cy="10.8" r="2" fill="currentColor" />
-                </svg>
-              </span>
-              <h3>Your name comes up? You’ll know.</h3>
+            <article class="person reveal">
+              <h3>Hard of hearing, loud office, second language</h3>
               <p>
-                Earshot highlights your name, and <kbd>⌥⌘R</kbd> or <kbd>Ctrl+Alt+R</kbd> shows you
-                in seconds what was just discussed and what you were asked.
+                Reading along helps when the audio is bad, the meeting app has no captions, or
+                everyone speaks fast.
               </p>
             </article>
-            <article class="feature">
-              <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M10 11h5M10 14.5h5M10 18h3"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
-              <h3>Notes that write themselves</h3>
+            <article class="person reveal">
+              <h3>Companies that ban note-taking bots</h3>
               <p>
-                After the meeting: summary, decisions and tasks with due dates. Searchable, sorted
-                by project, and you can simply ask your meetings.
+                No bot in the call, no data with third parties. That’s why Earshot is often allowed
+                where cloud tools fail the IT review.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="local" class="local" aria-labelledby="local-h">
+      <section id="local" class="band-night" aria-labelledby="local-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">100 % local</span>
-            <h2 id="local-h">No bot in your meeting. No cloud.</h2>
+            <h2 id="local-h">No bot in the meeting. No cloud. Check it yourself.</h2>
             <p>
-              Speech recognition and the language model run on your computer. That’s why Earshot
-              also works where cloud note-taking bots are banned.
+              Speech recognition and the language model run on your computer, even offline. Even I,
+              as the developer, can’t get to your meetings.
             </p>
           </div>
-          <div class="promises">
-            <div class="promise">
-              <h3>Conversations stay on your computer</h3>
-              <p>Audio and text are never sent anywhere. There is no account and no server.</p>
-            </div>
-            <div class="promise">
-              <h3>No audio recording</h3>
-              <p>Earshot never stores audio. Text only goes to disk when you save a meeting.</p>
-            </div>
-            <div class="promise">
-              <h3>Stored encrypted</h3>
-              <p>
-                Saved meetings live in an encrypted database, with the key in your system’s
-                keychain.
-              </p>
-            </div>
-            <div class="promise">
-              <h3>Nobody in the meeting notices</h3>
-              <p>
-                Earshot listens to your system sound. It doesn’t join meetings and needs no
-                permission from the host.
+          <div class="privacy-grid">
+            <ul class="promises reveal">
+              <li>
+                <strong>No audio on disk</strong>
+                <span>Earshot listens to your system sound and records nothing.</span>
+              </li>
+              <li>
+                <strong>Only what you save is saved</strong>
+                <span
+                  >After the meeting it’s your call. If you don’t save, the transcript is gone once
+                  you quit the app.</span
+                >
+              </li>
+              <li>
+                <strong>Encrypted</strong>
+                <span
+                  >Saved meetings live in an encrypted database, with the key in your system’s
+                  keychain.</span
+                >
+              </li>
+              <li>
+                <strong>No account, no tracking</strong>
+                <span>There is no server Earshot could send anything about you to.</span>
+              </li>
+            </ul>
+            <div class="reveal">
+              <div class="terminal">
+                <div class="terminal-bar"><i></i><i></i><i></i> Terminal · during a meeting</div>
+                <pre><span class="prompt">$</span> <span id="netcheck">lsof -nP -i -a -p $(pgrep -x earshot)</span>
+<span class="dim"># no output: not a single network connection</span></pre>
+                <div class="terminal-foot">
+                  <span>macOS, in Terminal, while a meeting is running</span>
+                  <button type="button" class="copy" data-copy="netcheck" data-done="Copied ✓">
+                    Copy command
+                  </button>
+                </div>
+              </div>
+              <p class="zero">
+                <b>0</b>
+                <span
+                  >connections during a meeting. Earshot only goes online to download models and
+                  check for updates.</span
+                >
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="start-h">
+      <section class="band-paper" aria-labelledby="start-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">Get started</span>
             <h2 id="start-h">Three steps to your first caption</h2>
           </div>
           <ol class="steps">
-            <li>
+            <li class="reveal">
               <h3>Install</h3>
               <p>
-                Download and open Earshot. On a Mac, you allow screen and system audio recording
-                once.
+                Download, open, done. On a Mac you allow system audio recording once. On Windows you
+                don’t need admin rights.
               </p>
             </li>
-            <li>
+            <li class="reveal">
               <h3>Load a speech model</h3>
               <p>
-                Once, about 0.2 to 5 GB depending on the model. Earshot recommends the right one for
-                your computer.
+                Once, 0.2 to 5 GB depending on the model. Earshot quickly measures what your
+                computer can handle and suggests the right one.
               </p>
             </li>
-            <li>
+            <li class="reveal">
               <h3>Start a meeting</h3>
               <p>
-                From the menu bar icon or with <kbd>⌥⌘M</kbd> / <kbd>Ctrl+Alt+M</kbd>. Captions
-                appear after about a second.
+                <kbd>⌥⌘M</kbd> or <kbd>Ctrl+Alt+M</kbd>. About a second after someone finishes a
+                sentence, it’s on your screen.
               </p>
             </li>
           </ol>
         </div>
       </section>
 
-      <section id="download" class="download" aria-labelledby="download-h">
+      <section id="download" class="band-white" aria-labelledby="download-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head download-head reveal">
             <span class="eyebrow">Download</span>
-            <h2 id="download-h">Try it for free</h2>
-            <p>
-              The beta is free. Later there will be a free version and a Pro subscription for
-              unlimited recaps and your meeting memory.
-            </p>
+            <h2 id="download-h">Try it in your next meeting</h2>
+            <p>Free during the beta. No account, no credit card, no email address.</p>
           </div>
           <div class="platforms">
-            <article class="platform" data-platform="mac">
+            <article class="platform reveal" data-platform="mac">
+              <span class="badge">Your system</span>
               <h3>macOS</h3>
               <ul>
                 <li>macOS 13 Ventura or later</li>
                 <li>Apple silicon (M1 and later) or Intel</li>
-                <li>8 GB of memory, 16 GB recommended for summaries</li>
+                <li>8 GB of memory, 16 GB is better for summaries</li>
               </ul>
               <div class="links">
                 <a
@@ -288,22 +497,23 @@
                   >For Apple silicon</a
                 >
                 <a
-                  class="button secondary"
+                  class="button ghost"
                   href="https://github.com/Kstev239/earshot-site/releases/latest/download/Earshot-mac-intel.dmg"
                   >For Intel Macs</a
                 >
               </div>
               <p class="note">
-                Which Mac? Apple menu → “About This Mac”: if the chip says “Apple M…”, pick Apple
+                Which Mac? Apple menu → “About This Mac”. If the chip says “Apple M…”, pick Apple
                 silicon.
               </p>
             </article>
-            <article class="platform" data-platform="windows">
+            <article class="platform reveal" data-platform="windows">
+              <span class="badge">Your system</span>
               <h3>Windows</h3>
               <ul>
                 <li>Windows 10 or 11, 64-bit</li>
-                <li>8 GB of memory, 16 GB recommended for summaries</li>
-                <li>Installs without administrator rights</li>
+                <li>8 GB of memory, 16 GB is better for summaries</li>
+                <li>Installs without admin rights</li>
               </ul>
               <div class="links">
                 <a
@@ -313,70 +523,92 @@
                 >
               </div>
               <p class="note">
-                During the beta, the Windows installer isn’t signed yet. Windows then warns about an
-                “unknown publisher”: “More info” → “Run anyway”.
+                During the beta the installer isn’t signed yet. Windows then warns about an “unknown
+                publisher”: “More info” → “Run anyway”.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="faq" aria-labelledby="faq-h">
+      <section id="faq" class="band-paper" aria-labelledby="faq-h">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <span class="eyebrow">FAQ</span>
-            <h2 id="faq-h">Good to know</h2>
+            <h2 id="faq-h">What people ask first</h2>
           </div>
-          <div class="faq">
+          <div class="faq reveal">
             <details>
-              <summary>Which meeting apps does Earshot work with?</summary>
+              <summary>Which meeting apps does it work with?</summary>
               <p>
-                Any app that plays sound on your computer: Zoom, Microsoft Teams, Google Meet,
-                Webex, Slack huddles, Discord and even videos in your browser. Earshot listens to
-                your system sound, not to one specific app.
+                Anything that plays sound on your computer: Zoom, Teams, Google Meet, Webex, Slack
+                huddles, Discord, even a video in your browser. Earshot listens to the system sound,
+                not to one particular app.
               </p>
             </details>
             <details>
-              <summary>Do I have to tell the other participants?</summary>
+              <summary>Do I have to tell the others?</summary>
               <p>
-                Earshot doesn’t record audio and only stores text if you want it to. Still, it’s
-                fair, and common in many companies, to let people know. Earshot gives you a
-                ready-made note to copy. What applies to you legally depends on your country and
-                your employer.
+                Earshot doesn’t record audio and only stores text if you want it to. Telling people
+                is still fair and common in many companies. The app has a sentence you can copy for
+                that. What applies legally depends on your country and your employer.
               </p>
             </details>
             <details>
-              <summary>Does Earshot need the internet?</summary>
+              <summary>How good is the recognition?</summary>
               <p>
-                Only to download the speech models once and to check for updates. During a meeting,
-                Earshot makes no connections. The content of your meetings never leaves your
-                computer.
+                Earshot uses Whisper, a widely used speech recognition model, right on your
+                computer. With clear speech the captions are very accurate. A bad microphone or lots
+                of jargon cause mistakes, as with any speech recognition.
               </p>
             </details>
             <details>
-              <summary>Which languages does Earshot understand?</summary>
+              <summary>Which languages?</summary>
               <p>
-                Earshot is made for German and English. In the settings you can also choose
-                automatic language detection, which understands more languages but is less reliable.
-                The app itself is available in German and English.
+                German and English. In the settings you can also choose automatic language
+                detection, which understands more languages but is less reliable.
               </p>
             </details>
             <details>
-              <summary>How much does Earshot cost?</summary>
+              <summary>Will it slow down my computer?</summary>
               <p>
-                Nothing during the beta. Afterwards, live captions and the alert when your name
-                comes up stay free. Unlimited recaps, summaries and your meeting memory will be part
-                of a Pro subscription.
+                During a meeting the speech recognition is busy, which you’ll notice in the fan
+                before you notice it in speed. Without a meeting Earshot does practically nothing.
+                16 GB of memory makes summaries and recaps comfortable.
               </p>
             </details>
             <details>
-              <summary>Where can I get help or give feedback?</summary>
+              <summary>How much does it cost?</summary>
               <p>
-                Write to <a href="mailto:Kelmsteven8@gmail.com">Kelmsteven8@gmail.com</a>. Feedback
-                from the beta is especially welcome.
+                Nothing during the beta. Afterwards, captions and the alert for your name stay free.
+                Unlimited recaps, summaries and your meeting memory go into a Pro subscription.
+              </p>
+            </details>
+            <details>
+              <summary>Where do I report bugs or wishes?</summary>
+              <p>
+                Email <a href="mailto:Kelmsteven8@gmail.com">Kelmsteven8@gmail.com</a>. Earshot is
+                built by one person, so every message gets read.
               </p>
             </details>
           </div>
+        </div>
+      </section>
+
+      <section class="band-night closing" aria-labelledby="closing-h">
+        <div class="wrap reveal">
+          <h2 id="closing-h">Your next meeting is coming.</h2>
+          <p>
+            Install Earshot before it does. It’s free, and you’ll know in the first call whether it
+            fits.
+          </p>
+          <a
+            class="button primary"
+            href="#download"
+            data-label-mac="Download free for Mac"
+            data-label-windows="Download free for Windows"
+            ><span>Download free</span></a
+          >
         </div>
       </section>
     </main>
